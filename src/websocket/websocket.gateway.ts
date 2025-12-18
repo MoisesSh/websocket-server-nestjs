@@ -30,7 +30,6 @@ export class WebsocketGateway
     @ConnectedSocket() client: Socket,
     @MessageBody() data: { message: string },
   ) {
-    console.log(data);
-    this.server.emit('message', 'recibido');
+    this.server.emit('message', `Texto recibido: ${data.message}`);
   }
 }
